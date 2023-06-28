@@ -2,7 +2,7 @@ const getAllPosts = (req, res) => {
     console.log("getAllPosts")
 }
 
-const getCurrentUserPosts = (res, res) => {
+const getCurrentUserPosts = (req, res) => {
     console.log("getCurrentUserPosts")
 }
 
