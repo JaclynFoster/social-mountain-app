@@ -1,5 +1,5 @@
-import { Post } from '../models/post'
-import { User } from '../models/user'
+const { Post } = require('../models/post')
+const { User } = require('../models/user')
 
 const getAllPosts = async (req, res) => {
   try {

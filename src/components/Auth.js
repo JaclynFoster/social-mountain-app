@@ -10,6 +10,7 @@ const Auth = () => {
   const authCtx = useContext(AuthContext)
   console.log('username', username)
   console.log('password', password)
+
   const submitHandler = e => {
     e.preventDefault()
     axios
@@ -27,6 +28,7 @@ const Auth = () => {
         console.log('Auth Response:', res.data)
       })
       .catch(err => {
+        alert('An error has occurred. Please try again.')
         console.log('error on auth post request:', err)
         setUsername('')
         setPassword('')
@@ -60,6 +62,7 @@ const Auth = () => {
     </main>
   )
 }
+
 
 export default Auth
 
