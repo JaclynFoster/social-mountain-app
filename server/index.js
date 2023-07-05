@@ -14,14 +14,13 @@ const {
   deletePost
 } = require('./controllers/posts')
 const { isAuthenticated } = require('./middleware/isAuthenticated')
-const { Sequelize } = require('sequelize')
 require('dotenv').config()
 
 app.use(express.json())
 app.use(cors())
 
-User.hasMany
-Post.belongTo
+User.hasMany(Post)
+Post.belongsTo(User)
 
 app.get(`/posts`, getAllPosts)
 app.get(`/userposts/:userId`, getCurrentUserPosts)

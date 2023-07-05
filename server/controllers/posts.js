@@ -15,8 +15,7 @@ const getAllPosts = async (req, res) => {
     })
     res.status(200).send(posts)
   } catch (error) {
-    console.log('ERROR IN getAllPosts')
-    console.log(error)
+    console.log('ERROR IN getAllPosts', error)
     res.sendStatus(400)
   }
 }
@@ -45,10 +44,10 @@ const addPost = async (req, res) => {
   try {
     const { title, content, status, userId } = req.body
     await Post.create({
-      title: title,
-      content: content,
+      title,
+      content,
       privateStatus: status,
-      userId: userId
+      userId
     })
     res.sendStatus(200)
   } catch (error) {

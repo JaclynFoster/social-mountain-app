@@ -16,15 +16,15 @@ const Auth = () => {
     axios
       .post(
         register
-          ? `https://localhost:4005/register`
-          : `https://localhost:4005/login`,
+          ? `http://localhost:4005/register`
+          : `http://localhost:4005/login`,
         {
           username,
           password
         }
       )
       .then(res => {
-        authCtx.login(res.data.token, res.data.expiration, res.data.userId)
+        authCtx.login(res.data.token, res.data.exp, res.data.userId)
         console.log('Auth Response:', res.data)
       })
       .catch(err => {
