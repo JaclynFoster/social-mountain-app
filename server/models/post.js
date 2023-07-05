@@ -1,8 +1,7 @@
 const { DataTypes } = require('sequelize')
-const {sequelize} = require('../util/database')
+const { sequelize } = require('../util/database')
 
 module.exports = {
-
   Post: sequelize.define('post', {
     id: {
       type: DataTypes.INTEGER,
@@ -15,4 +14,5 @@ module.exports = {
     privateStatus: DataTypes.BOOLEAN
   })
 }
+
 
